@@ -12,7 +12,6 @@ def get_todos():
 @app.route('/todos', methods=['POST'])
 def add_item():
     todo = request.json
-    todo["id"] = len(todos)  # Assign a unique ID
     todos.append(todo)
     return jsonify(todo), 201
 
